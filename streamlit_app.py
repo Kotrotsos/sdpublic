@@ -18,7 +18,7 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
 """
-## Welcome to Brainstorm Dream!
+## Welcome to Dream!
 Use the input fields in the sidebar on the left to control what is generated.
 On mobile click the arrow in the top left to open the sidebar. 
 """

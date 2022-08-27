@@ -6,6 +6,17 @@ import io
 import os
 from PIL import Image
 import streamlit as st
+
+
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden; display:none;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
+
+
 """
 ## Welcome to Brainstorm Dream!
 Use the input fields in the sidebar on the left to control what is generated.

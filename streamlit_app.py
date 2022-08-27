@@ -24,7 +24,7 @@ On Mobile click the arrow in the top left to open the sidebar.
 """
  
 stability_api = client.StabilityInference(
-    key='sk-FIsaJ5SntlvgL4ViaClOzupfGqHY3Lsp8HjGuIYN1lnQoAiY', 
+    key=st.secrets["key"], 
     verbose=True
 )
 

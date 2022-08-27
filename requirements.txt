@@ -1,0 +1,5 @@
+altair
+pandas
+streamlit
+stability-sdk
+libmagic

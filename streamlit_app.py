@@ -29,10 +29,12 @@ stability_api = client.StabilityInference(
 )
 
 # st.code(st.secrets["key"])
-
 option = st.sidebar.selectbox(
-     'Want to use a template?',
+     'Select a template?',
      ('', 'Synthwave car', 'HR Gigeresque landscape', 'Van Gogh painting'))
+
+options = st.sidebar.multiselect('Assemble a description by choosing features', ["Car", "Beautiful girl", "Landscape", "River", "A man", "Skyline", "Highly detailed","surrealism","trending on art station","triadic color scheme","smooth","sharp focus","matte","elegant","the most beautiful image ever seen","illustration","digital paint","dark","gloomy","octane render","8k","4k","washed colors","sharp","dramatic lighting","beautiful","post processing","picture of the day","ambient lighting","epic composition"])
+ 
 
 st.write('You selected:', option)
 
@@ -47,12 +49,12 @@ else:
 
 
 
-options = st.sidebar.multiselect('Assemble a description', ["Car", "Beautiful girl", "Landscape", "River", "A man", "Skyline", "Highly detailed","surrealism","trending on art station","triadic color scheme","smooth","sharp focus","matte","elegant","the most beautiful image ever seen","illustration","digital paint","dark","gloomy","octane render","8k","4k","washed colors","sharp","dramatic lighting","beautiful","post processing","picture of the day","ambient lighting","epic composition"])
 
 if template == "":
     txt = st.sidebar.text_area('Or write out the description yourself.',', '.join(options),placeholder='A River flows into a lake. High Quality Art.')
 else:
      txt = st.sidebar.text_area('Or write out the description yourself.',template,placeholder='A River flows into a lake. High Quality Art.')
+
 
 
 if st.sidebar.button('Generate image from this description'):

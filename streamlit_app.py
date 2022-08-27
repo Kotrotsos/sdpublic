@@ -20,7 +20,7 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 """
 ## Welcome to Brainstorm Dream!
 Use the input fields in the sidebar on the left to control what is generated.
-On Mobile click the arrow in the top left to open the sidebar.
+On mobile click the arrow in the top left to open the sidebar.
 """
  
 stability_api = client.StabilityInference(

@@ -7,8 +7,9 @@ import os
 from PIL import Image
 import streamlit as st
 """
-## Welcome to our Stable Diffusion Model!
+## Welcome to Brainstorm Dream!
 Use the input fields in the sidebar on the left to control what is generated.
+On Mobile click the arrow in the top left to open the sidebar.
 """
  
 stability_api = client.StabilityInference(
@@ -17,11 +18,9 @@ stability_api = client.StabilityInference(
 )
 
 
-options = st.sidebar.multiselect(
-     'Assemble a description',
-     ['A fierce', 'A young', 'Duck', 'Tomato', 'Running', 'Waddling', 'boy', 'girl', 'high-resolution'])
+options = st.sidebar.multiselect('Assemble a description', ["Car", "Beautiful girl", "Landscape", "Skyline", "Highly detailed","surrealism","trending on art station","triadic color scheme","smooth","sharp focus","matte","elegant","the most beautiful image ever seen","illustration","digital paint","dark","gloomy","octane render","8k","4k","washed colors","sharp","dramatic lighting","beautiful","post processing","picture of the day","ambient lighting","epic composition"])
 
-txt = st.sidebar.text_area('Or write out the description yourself.', ' '.join(options))
+txt = st.sidebar.text_area('Or write out the description yourself.',' '.join(options))
 
 if st.sidebar.button('Generate image from this description'):
     answers = stability_api.generate(

@@ -20,7 +20,7 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 """
 ## Welcome to Dream!
 Use the input fields in the sidebar on the left to control what is generated.
-On mobile click the arrow in the top left to open the sidebar. 
+On mobile click the arrow in the top left to open the sidebar.
 """
  
 stability_api = client.StabilityInference(
@@ -30,9 +30,9 @@ stability_api = client.StabilityInference(
 
 st.code(st.secrets["key"])
 
-options = st.sidebar.multiselect('Assemble a description', ["Car", "Beautiful girl", "Landscape", "Skyline", "Highly detailed","surrealism","trending on art station","triadic color scheme","smooth","sharp focus","matte","elegant","the most beautiful image ever seen","illustration","digital paint","dark","gloomy","octane render","8k","4k","washed colors","sharp","dramatic lighting","beautiful","post processing","picture of the day","ambient lighting","epic composition"])
+options = st.sidebar.multiselect('Assemble a description', ["Car", "Beautiful girl", "Landscape", "River", "A man", "Skyline", "Highly detailed","surrealism","trending on art station","triadic color scheme","smooth","sharp focus","matte","elegant","the most beautiful image ever seen","illustration","digital paint","dark","gloomy","octane render","8k","4k","washed colors","sharp","dramatic lighting","beautiful","post processing","picture of the day","ambient lighting","epic composition"])
 
-txt = st.sidebar.text_area('Or write out the description yourself.',' '.join(options))
+txt = st.sidebar.text_area('Or write out the description yourself.',' '.join(options),placeholder='A River flows into a lake. High Quality Art.')
 
 if st.sidebar.button('Generate image from this description'):
     answers = stability_api.generate(

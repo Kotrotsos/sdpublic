@@ -28,7 +28,7 @@ stability_api = client.StabilityInference(
     verbose=True
 )
 
-st.code(st.secrets["key"])
+# st.code(st.secrets["key"])
 
 options = st.sidebar.multiselect('Assemble a description', ["Car", "Beautiful girl", "Landscape", "River", "A man", "Skyline", "Highly detailed","surrealism","trending on art station","triadic color scheme","smooth","sharp focus","matte","elegant","the most beautiful image ever seen","illustration","digital paint","dark","gloomy","octane render","8k","4k","washed colors","sharp","dramatic lighting","beautiful","post processing","picture of the day","ambient lighting","epic composition"])
 

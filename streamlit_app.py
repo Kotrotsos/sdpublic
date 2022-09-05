@@ -18,9 +18,10 @@ st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 
 """
-## Welcome to Dream!
+## Welcome to Dream. Proof of Concept!
 Use the input fields in the sidebar on the left to control what is generated.
-On mobile click the arrow in the top left to open the sidebar.
+On mobile click the arrow in the top left to open the sidebar. Close it again to see the
+image. 
 """
  
 stability_api = client.StabilityInference(
@@ -33,15 +34,15 @@ option = st.sidebar.selectbox(
      'Select a template?',
      ('', 'Synthwave car', 'HR Gigeresque landscape', 'Van Gogh painting'))
 
+st.sidebar.write('You selected:', option)
 options = st.sidebar.multiselect('Assemble a description by choosing features', ["Car", "Beautiful girl", "Landscape", "River", "A man", "Skyline", "Highly detailed","surrealism","trending on art station","triadic color scheme","smooth","sharp focus","matte","elegant","the most beautiful image ever seen","illustration","digital paint","dark","gloomy","octane render","8k","4k","washed colors","sharp","dramatic lighting","beautiful","post processing","picture of the day","ambient lighting","epic composition"])
  
 
-st.write('You selected:', option)
 
 if option == 'Synthwave car':
     template = "Car Synthwave Highly detailed, surrealism, trending on art station, triadic color scheme, smooth, sharp focus, matte, elegant, the most beautiful image ever seen, illustration, digital paint, dark, gloomy, octane render, 8k, 4k, washed colors, sharp, dramatic lighting, beautiful, post processing, picture of the day, ambient lighting, epic composition"
 elif option == 'HR Gigeresque landscape':
-    template = "HR Giger, Alien landscape. surrealism. Dark. High Quality. Ultra Realistic."
+    template = "Alien landscape by HR Giger,sharp focus, matte, elegant, the most beautiful image ever seen. High Quality. Ultra Realistic."
 elif option == 'Van Gogh painting':
     template = "Painting by Vincent Van Gogh"
 else:
@@ -71,3 +72,4 @@ if st.sidebar.button('Generate image from this description'):
                 if artifact.type == generation.ARTIFACT_IMAGE:
                     img = Image.open(io.BytesIO(artifact.binary))
                     st.image(img)
+                    st.text('Generate a new image when the image is blury or has a low quality.')
